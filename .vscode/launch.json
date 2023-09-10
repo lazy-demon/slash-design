@@ -1,0 +1,38 @@
+// run the commands: 
+// cd slash/slash_server
+// docker-compose up --build --detach
+// dart bin/main.dart
+// cd slash/slash_flutter
+// flutter run -d chrome
+// write the launch .json ising the text above 
+// to run the debugger, click the debug button on the left side of the screen
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "server",
+            "request": "launch",
+            "type": "dart",
+            "cwd": "${workspaceFolder}/slash_server",
+            "program": "bin/main.dart",
+            "deviceId": "web-server"
+        },
+        {
+            "name": "client",
+            "request": "launch",
+            "type": "dart",
+            "cwd": "${workspaceFolder}/slash_flutter",
+            "program": "lib/main.dart",
+        }
+    ],
+    "compounds": [
+        {
+            "name": "serverpod",
+            "configurations": [
+                "server",
+                "client"
+            ],
+            "preLaunchTask": "docker",
+        }
+    ]
+}
