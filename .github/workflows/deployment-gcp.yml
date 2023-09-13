@@ -16,7 +16,7 @@ on:
 env: 
   PROJECT: "slash-design-231099"
   REGION: europe-west4
-  ZONE: eu-west4-a
+  ZONE: europe-west4-b
 
 jobs:
   deploy:

@@ -19,5 +19,5 @@ dns_managed_zone = "slashdesign.nl."
 top_domain = "slashdesign.nl"
 
 # The region and zone to use for the deployment. Default values work.
-region = "eu-west4"
-zone   = "eu-west4-a"
+region = "europe-west4"
+zone   = "europe-west4-b"
