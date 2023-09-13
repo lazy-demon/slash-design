@@ -10,14 +10,14 @@
 project = "slash-design-231099"
 
 # The service account email address authorized by your Google Cloud Console.
-service_account_email = "jefdayt@gmail.com"
+service_account_email = "terraform@slash-design-231099.iam.gserviceaccount.com"
 
 # The name of your DNS zone.
-dns_managed_zone = "slashdesign.nl."
+dns_managed_zone = "slash-design"
 
 # The top domain of your DNS zone. e.g. "examplepod.com"
 top_domain = "slashdesign.nl"
 
 # The region and zone to use for the deployment. Default values work.
 region = "europe-west4"
-zone   = "europe-west4-b"
+zone   = "europe-west4-c"
