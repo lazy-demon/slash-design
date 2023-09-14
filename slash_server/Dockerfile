@@ -6,7 +6,7 @@ COPY . .
 RUN dart pub get
 RUN dart compile exe bin/main.dart -o bin/main
 
-FROM busybox:1.34.1
+FROM busybox:1.36.0-glibc
 
 ENV runmode=development
 ENV serverid=default
