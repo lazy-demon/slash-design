@@ -8,14 +8,14 @@ services:
     environment:
       POSTGRES_USER: postgres
       POSTGRES_DB: slash
-      POSTGRES_PASSWORD: "qc96znvUzDHS4nRocGQaCYKtoI1Fzs24"
+      POSTGRES_PASSWORD: "D20VBmgVfA8agf0y_qW3NRpwaX5tZ11m"
     volumes:
       - slash_data:/var/lib/postgresql/data
   redis:
     image: redis:6.2.6
     ports:
       - '8091:6379'
-    command: redis-server --requirepass "K2ZigKZoX4K0Y7wuoJdfixEl7aCPRFlA"
+    command: redis-server --requirepass "gQu2jpj0Nl0x8zqmNMnEhOE4MMKCpidj"
     environment:
       - REDIS_REPLICATION_MODE=master
 volumes:

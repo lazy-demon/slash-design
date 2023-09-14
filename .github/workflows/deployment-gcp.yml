@@ -13,10 +13,13 @@ on:
           - 'staging'
           - 'production'
 
-env: 
-  PROJECT: "slash-design-231099"
+env:
+  # TODO: Update with your Google Cloud project id. If you have changed the
+  # region and zone in your Terraform configuration, you will need to change
+  # it here too.
+  PROJECT: "slash-design-23101999"
   REGION: europe-west4
-  ZONE: europe-west4-c
+  ZONE: europe-west4-b
 
 jobs:
   deploy:
