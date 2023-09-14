@@ -2,13 +2,13 @@
     "sqltools.connections": [
         {
             "previewLimit": 50,
-            "server": "localhost",
-            "port": 8090,
+            "server": "database.slashdesign.nl",
+            "port": 5432,
             "driver": "PostgreSQL",
-            "name": "database",
+            "name": "slash-design",
             "username": "postgres",
             "database": "serverpod",
-            "password": "JUm5_6R9PpHvpq0qA1mcQJt8s-49JMXV"
+            "password": "KhdLGBAKTsOPpxsg0lGVe-Xj_7x5cfTU"
         }
     ]
 }
