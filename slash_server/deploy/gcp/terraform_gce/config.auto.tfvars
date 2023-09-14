@@ -7,17 +7,17 @@
 # https://docs.serverpod.dev/
 
 # The Project ID from the Google Cloud Console.
-project = "<GOOGLE CLOUD PROJECT ID>"
+project = "slash-design-23101999"
 
 # The service account email address authorized by your Google Cloud Console.
-service_account_email = "<SERVICE ACCOUNT EMAIL>"
+service_account_email = "service-terraform@slash-design-23101999.iam.gserviceaccount.com"
 
 # The name of your DNS zone.
-dns_managed_zone = "<MANAGED ZONE>"
+dns_managed_zone = "slash-zone"
 
 # The top domain of your DNS zone. e.g. "examplepod.com"
-top_domain = "<YOUR DOMAIN NAME>"
+top_domain = "slashdesign.nl"
 
 # The region and zone to use for the deployment. Default values work.
-region = "us-central1"
-zone   = "us-central1-c"
+region = "europe-west4"
+zone   = "europe-west4-b"
