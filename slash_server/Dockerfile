@@ -1,4 +1,4 @@
-FROM dart:2.19.0 AS build
+FROM dart:stable AS build
 
 WORKDIR /app
 COPY . .
@@ -6,7 +6,7 @@ COPY . .
 RUN dart pub get
 RUN dart compile exe bin/main.dart -o bin/main
 
-FROM busybox
+FROM debian:buster-slim AS runtime
 
 ENV runmode=development
 ENV serverid=default
