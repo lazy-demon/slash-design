@@ -7,15 +7,15 @@ services:
       - '8090:5432'
     environment:
       POSTGRES_USER: postgres
-      POSTGRES_DB: slash
-      POSTGRES_PASSWORD: "V9MLYNh6YjrZH48cmxmdRcrXJXBiT-oT"
+      POSTGRES_DB: serverpod
+      POSTGRES_PASSWORD: "-AFqVPnFzGsayDTkD9aiO94Qk7MUn0Fz"
     volumes:
       - slash_data:/var/lib/postgresql/data
   redis:
     image: redis:6.2.6
     ports:
       - '8091:6379'
-    command: redis-server --requirepass "yp1CwSCE86hXqzTyC-lkFn8ubxty4W7r"
+    command: redis-server --requirepass "NCTJoUBTDd6pocEplnw9JO6p87tGQvZR"
     environment:
       - REDIS_REPLICATION_MODE=master
 volumes:
