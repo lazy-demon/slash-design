@@ -6,9 +6,9 @@ COPY . .
 RUN dart pub get
 RUN dart compile exe bin/main.dart -o bin/main
 
-FROM busybox
+FROM debian:buster-slim AS runtime
 
-ENV runmode=development
+ENV runmode=production
 ENV serverid=default
 ENV logging=normal
 ENV role=monolith
