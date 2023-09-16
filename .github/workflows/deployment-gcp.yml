@@ -17,7 +17,7 @@ env:
   # TODO: Update with your Google Cloud project id. If you have changed the
   # region and zone in your Terraform configuration, you will need to change
   # it here too.
-  PROJECT: "slash-design-23101999"
+  PROJECT: "slash-design-8523"
   REGION: europe-west4
   ZONE: europe-west4-b
 

@@ -7,10 +7,10 @@
 # https://docs.serverpod.dev/
 
 # The Project ID from the Google Cloud Console.
-project = "slash-design-23101999"
+project = "slash-design-8523"
 
 # The service account email address authorized by your Google Cloud Console.
-service_account_email = "service-terraform@slash-design-23101999.iam.gserviceaccount.com"
+service_account_email = "slash-service-account@slash-design-8523.iam.gserviceaccount.com"
 
 # The name of your DNS zone.
 dns_managed_zone = "slash-zone"
