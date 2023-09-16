@@ -8,7 +8,7 @@ RUN dart compile exe bin/main.dart -o bin/main
 
 FROM busybox:1.36.0-glibc
 
-ENV runmode=production
+ENV runmode=development
 ENV serverid=default
 ENV logging=normal
 ENV role=monolith
