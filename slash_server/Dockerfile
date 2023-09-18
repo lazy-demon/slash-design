@@ -8,9 +8,6 @@ RUN dart compile exe bin/main.dart -o bin/main
 
 FROM debian:buster-slim AS runtime
 
-ARG SERVERPOD_PASSWORDS
-RUN echo "$SERVERPOD_PASSWORDS" > config/passwords.yaml
-
 ENV runmode=production
 ENV serverid=default
 ENV logging=normal
@@ -21,6 +18,9 @@ COPY --from=build /app/bin/main /app/bin/main
 COPY --from=build /app/config/ config/
 COPY --from=build /app/generated/ generated/
 COPY --from=build /app/web/ web/
+
+ARG SERVERPOD_PASSWORDS
+RUN echo "$SERVERPOD_PASSWORDS" > config/passwords.yaml
 
 EXPOSE 8080
 EXPOSE 8081
