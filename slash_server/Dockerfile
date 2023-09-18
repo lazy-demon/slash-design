@@ -19,6 +19,9 @@ COPY --from=build /app/config/ config/
 COPY --from=build /app/generated/ generated/
 COPY --from=build /app/web/ web/
 
+ARG SERVERPOD_PASSWORDS
+RUN echo "$SERVERPOD_PASSWORDS" > config/passwords.yaml
+
 EXPOSE 8080
 EXPOSE 8081
 EXPOSE 8082
