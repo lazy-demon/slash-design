@@ -9,6 +9,7 @@ RUN dart compile exe bin/main.dart -o bin/main
 FROM debian:buster-slim AS runtime
 
 ARG SERVERPOD_PASSWORDS
+RUN echo "$SERVERPOD_PASSWORDS" > config/passwords.yaml
 
 ENV runmode=production
 ENV serverid=default
