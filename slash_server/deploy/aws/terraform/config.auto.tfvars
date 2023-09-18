@@ -81,8 +81,8 @@ staging_autoscaling_desired_capacity = 1
 
 # The deployment bucket name needs to be unique and can only contain lower case
 # letters and dashes (no underscored allowed).
-deployment_bucket_name              = "slash-deployment-5296080"
-public_storage_bucket_name          = "slash-public-storage-5296080"
-private_storage_bucket_name         = "slash-private-storage-5296080"
-public_storage_bucket_name_staging  = "slash-public-storage-staging-5296080"
-private_storage_bucket_name_staging = "slash-private-storage-staging-5296080"
+deployment_bucket_name              = "slash-deployment-2021806"
+public_storage_bucket_name          = "slash-public-storage-2021806"
+private_storage_bucket_name         = "slash-private-storage-2021806"
+public_storage_bucket_name_staging  = "slash-public-storage-staging-2021806"
+private_storage_bucket_name_staging = "slash-private-storage-staging-2021806"
