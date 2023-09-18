@@ -2,13 +2,13 @@
     "sqltools.connections": [
         {
             "previewLimit": 50,
-            "server": "database.slashdesign.nl",
-            "port": 5432,
+            "server": "containers-us-west-72.railway.app",
+            "port": 6695,
             "driver": "PostgreSQL",
             "name": "slash-design",
             "username": "postgres",
-            "database": "serverpod",
-            "password": "-AFqVPnFzGsayDTkD9aiO94Qk7MUn0Fz"
+            "database": "railway",
+            "password": "e86NFfL9dnPHTVlyulWv"
         }
     ]
 }
