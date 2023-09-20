@@ -2,13 +2,27 @@
     "sqltools.connections": [
         {
             "previewLimit": 50,
-            "server": "containers-us-west-72.railway.app",
-            "port": 6695,
+            "server": "database-production-1410.up.railway.app",
+            "port": 8080,
             "driver": "PostgreSQL",
             "name": "slash-design",
             "username": "postgres",
-            "database": "railway",
-            "password": "e86NFfL9dnPHTVlyulWv"
+            "database": "recon",
+            "password": "password"
+        },
+        {
+            "mysqlOptions": {
+                "authProtocol": "default",
+                "enableSsl": "Disabled"
+            },
+            "previewLimit": 50,
+            "server": "database-production-1410.up.railway.app",
+            "port": 8082,
+            "driver": "MariaDB",
+            "database": "recon",
+            "username": "mariadb",
+            "name": "database",
+            "askForPassword": true
         }
     ]
 }
