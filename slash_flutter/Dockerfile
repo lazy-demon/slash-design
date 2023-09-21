@@ -25,10 +25,9 @@ RUN mkdir $APP
 # copy source code to folder
 COPY . $APP
 # stup new folder as the working directory
-WORKDIR $APP
+WORKDIR $APP/slash_flutter
 
 # Run build: 1 - clean, 2 - pub get, 3 - build web
-RUN cd slash_flutter
 RUN flutter clean
 RUN flutter pub get
 RUN flutter build web
