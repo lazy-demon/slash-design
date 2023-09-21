@@ -1,12 +1,13 @@
 # Environemnt to install flutter and build web
 FROM debian:latest AS build-env
 
+# install all needed stuff
 RUN apt-get update
 RUN apt-get install -y curl git unzip
 
 # define variables
 ARG FLUTTER_SDK=/usr/local/flutter
-ARG APP=/app/
+ARG APP=/app/slash_flutter
 
 #clone flutter
 RUN git clone https://github.com/flutter/flutter.git $FLUTTER_SDK
@@ -25,12 +26,14 @@ RUN mkdir $APP
 # copy source code to folder
 COPY . $APP
 # stup new folder as the working directory
-WORKDIR $APP/slash_flutter
+WORKDIR $APP
 
 # Run build: 1 - clean, 2 - pub get, 3 - build web
 RUN flutter clean
 RUN flutter pub get
 RUN flutter build web
+
+# once heare the app will be compiled and ready to deploy
 
 # use nginx to deploy
 FROM nginx:1.25.2-alpine
