@@ -28,6 +28,7 @@ COPY . $APP
 WORKDIR $APP
 
 # Run build: 1 - clean, 2 - pub get, 3 - build web
+RUN cd slash_flutter
 RUN flutter clean
 RUN flutter pub get
 RUN flutter build web
