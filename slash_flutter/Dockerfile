@@ -22,12 +22,7 @@ ENV PATH="$FLUTTER_SDK/bin:$FLUTTER_SDK/bin/cache/dart-sdk/bin:${PATH}"
 RUN flutter doctor -v
 
 # create folder to copy source code
-RUN mkdir $APP
-# copy source code to folder
-COPY . $APP
-# stup new folder as the working directory
-WORKDIR $APP
-
+RUN mkdir $APP 
 # Run build: 1 - clean, 2 - pub get, 3 - build web
 RUN cd slash_flutter && flutter clean
 RUN cd slash_flutter && flutter pub get
