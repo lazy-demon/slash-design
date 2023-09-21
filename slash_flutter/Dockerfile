@@ -22,7 +22,12 @@ ENV PATH="$FLUTTER_SDK/bin:$FLUTTER_SDK/bin/cache/dart-sdk/bin:${PATH}"
 RUN flutter doctor -v
 
 # create folder to copy source code
-RUN mkdir $APP 
+RUN mkdir $APP
+# copy source code to folder
+COPY . $APP
+# stup new folder as the working directory
+WORKDIR $APP
+
 # Run build: 1 - clean, 2 - pub get, 3 - build web
 RUN cd slash_flutter && flutter clean
 RUN cd slash_flutter && flutter pub get
@@ -34,7 +39,7 @@ RUN cd slash_flutter && flutter build web
 FROM nginx:1.25.2-alpine
 
 # copy the info of the builded web app to nginx
-COPY --from=build-env /app/build/web /usr/share/nginx/html
+COPY --from=build-env /app/slash_flutter/build/web /usr/share/nginx/html
 
 # Expose and run nginx
 EXPOSE 80
