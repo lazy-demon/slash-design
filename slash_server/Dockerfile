@@ -26,5 +26,6 @@ EXPOSE 8080
 EXPOSE 8081
 EXPOSE 8082
 EXPOSE 8000
+EXPOSE 8001
 
 CMD app/bin/main --mode $runmode --server-id $serverid --logging $logging --role $role
