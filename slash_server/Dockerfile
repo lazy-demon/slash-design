@@ -25,5 +25,6 @@ RUN echo "$SERVERPOD_PASSWORDS" > config/passwords.yaml
 EXPOSE 8080
 EXPOSE 8081
 EXPOSE 8082
+EXPOSE 8000
 
 CMD app/bin/main --mode $runmode --server-id $serverid --logging $logging --role $role
