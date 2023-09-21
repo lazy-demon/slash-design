@@ -24,7 +24,7 @@ RUN flutter doctor -v
 # create folder to copy source code
 RUN mkdir $APP
 # copy source code to folder
-COPY . $APP
+COPY ./slash_flutter/ $APP
 # stup new folder as the working directory
 WORKDIR $APP
 
