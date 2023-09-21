@@ -30,8 +30,8 @@ WORKDIR $APP
 
 # Run build: 1 - clean, 2 - pub get, 3 - build web
 RUN cd slash_flutter && flutter clean
-RUN flutter pub get
-RUN flutter build web
+RUN cd slash_flutter && flutter pub get
+RUN cd slash_flutter && flutter build web
 
 # once heare the app will be compiled and ready to deploy
 
