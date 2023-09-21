@@ -11,8 +11,6 @@ COPY . .
 RUN git clone https://github.com/flutter/flutter.git -b stable
 ENV PATH "$PATH:/app/flutter/bin"
 
-# Install Flutter dependencies
-RUN flutter doctor
 RUN flutter pub get
 
 # Build the Flutter app
