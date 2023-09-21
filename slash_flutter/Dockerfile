@@ -7,7 +7,7 @@ RUN apt-get install -y curl git unzip
 
 # define variables
 ARG FLUTTER_SDK=/usr/local/flutter
-ARG APP=/app/slash_flutter
+ARG APP=/app
 
 #clone flutter
 RUN git clone https://github.com/flutter/flutter.git $FLUTTER_SDK
