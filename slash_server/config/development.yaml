@@ -8,9 +8,9 @@
 
 # Configuration for the main API server.
 apiServer:
-  port: 8080
+  port: 8000
   publicHost: 127.0.0.1
-  publicPort: 8080
+  publicPort: 8000
   publicScheme: http
 
 # Configuration for the Insights server.
@@ -22,9 +22,9 @@ insightsServer:
 
 # Configuration for the web server.
 webServer:
-  port: 8000
+  port: 8080
   publicHost: 127.0.0.1
-  publicPort: 8000
+  publicPort: 8080
   publicScheme: http
 
 # This is the database setup for your server.
