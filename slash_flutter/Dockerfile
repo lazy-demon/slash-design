@@ -1,6 +1,25 @@
-FROM cirruslabs/flutter:3.14.0-0.2.pre as build
+# Use an official Flutter runtime as the base image
+FROM google/dart:2.12
 
-WORKDIR /build
+# Set the working directory in the container
+WORKDIR /app
+
+# Copy the Flutter app source code into the container
 COPY . .
 
-RUN flutter run linux
+# Install Flutter SDK
+RUN git clone https://github.com/flutter/flutter.git -b stable
+ENV PATH "$PATH:/app/flutter/bin"
+
+# Install Flutter dependencies
+RUN flutter doctor
+RUN flutter pub get
+
+# Build the Flutter app
+RUN flutter build apk
+
+# Expose the port your app will run on (if needed)
+# EXPOSE 8080
+
+# Start your Flutter app
+CMD ["flutter", "run", "--release"]
