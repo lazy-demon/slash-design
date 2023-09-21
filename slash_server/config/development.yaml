@@ -22,20 +22,20 @@ insightsServer:
 
 # Configuration for the web server.
 webServer:
-  port: 8082
+  port: 8000
   publicHost: 127.0.0.1
-  publicPort: 8082
+  publicPort: 8000
   publicScheme: http
 
 # This is the database setup for your server.
 database:
-  host: containers-us-west-72.railway.app
-  port: 6695
-  name: railway
+  host: localhost
+  port: 8090
+  name: slash
   user: postgres
 
 # This is the setup for Redis.
 redis:
   enabled: true
-  host: containers-us-west-32.railway.app
-  port: 7358
+  host: localhost
+  port: 8091

@@ -15,7 +15,8 @@
             "type": "dart",
             "cwd": "${workspaceFolder}/slash_server",
             "program": "bin/main.dart",
-            "deviceId": "web-server"
+            "deviceId": "web-server",
+            "preLaunchTask": "compose"
         },
         {
             "name": "client",
@@ -23,6 +24,12 @@
             "type": "dart",
             "cwd": "${workspaceFolder}/slash_flutter",
             "program": "lib/main.dart",
+        },
+        {
+            "type": "node-terminal",
+            "request": "launch",
+            "name": "railway",
+            "command": "nvm install 18 && npm install -g @railway/cli",
         }
     ],
     "compounds": [
@@ -34,5 +41,6 @@
             ],
             "preLaunchTask": "docker",
         }
-    ]
+    ],
 }
+// && && nvm use 18 && npm install -g @railway/cli
