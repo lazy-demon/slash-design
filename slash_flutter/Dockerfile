@@ -8,6 +8,7 @@ WORKDIR /app
 COPY . .
 
 # Install Flutter SDK
+RUN sudo apt-get install unzip
 RUN git clone https://github.com/flutter/flutter.git -b stable
 ENV PATH "$PATH:/app/flutter/bin"
 
