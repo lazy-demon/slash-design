@@ -14,10 +14,10 @@ ENV PATH "$PATH:/app/flutter/bin"
 RUN flutter pub get
 
 # Build the Flutter app
-RUN flutter build apk
+RUN flutter build release
 
 # Expose the port your app will run on (if needed)
-# EXPOSE 8080
+EXPOSE 8080
 
 # Start your Flutter app
 CMD ["flutter", "run", "--release"]
