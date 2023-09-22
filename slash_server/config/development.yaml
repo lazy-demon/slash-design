@@ -23,7 +23,7 @@ insightsServer:
 # Configuration for the web server.
 webServer:
   port: 8080
-  publicHost: 0.0.0.0
+  publicHost: web.slashdesign.nl
   publicPort: 8080
   publicScheme: http
 
