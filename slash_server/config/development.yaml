@@ -9,14 +9,14 @@
 # Configuration for the main API server.
 apiServer:
   port: 8000
-  publicHost: 0.0.0.0
+  publicHost: api.slashdesign.nl
   publicPort: 8000
   publicScheme: http
 
 # Configuration for the Insights server.
 insightsServer:
   port: 8001
-  publicHost: 0.0.0.0
+  publicHost: insights.slashdesign.nl
   publicPort: 8001
   publicScheme: http
 
