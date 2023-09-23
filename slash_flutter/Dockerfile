@@ -31,9 +31,7 @@ WORKDIR $APP
 # Run build: 1 - clean, 2 - pub get, 3 - build web
 RUN cd slash_flutter && flutter clean && flutter pub get && flutter build web
 
-FROM caddy:2.7.4-alpine
-# copy the info of the builded web app to nginx
-COPY --from=build-env /app /
+FROM caddy:2.7.4-alpine 
 
 COPY slash_proxy/Caddyfile /etc/caddy/Caddyfile
 
