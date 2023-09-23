@@ -1,9 +1,5 @@
 FROM caddy:2.7.4-alpine
 
-
-
-
-
 ARG APP=/app
 
 # create folder to copy source code
