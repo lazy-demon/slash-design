@@ -26,19 +26,17 @@ RUN mkdir $APP
 # copy source code to folder
 COPY . $APP
 # stup new folder as the working directory
-WORKDIR $APP/slash_flutter
+WORKDIR $APP
 
 # Run build: 1 - clean, 2 - pub get, 3 - build web
-RUN flutter clean && flutter pub get && flutter build web
+RUN cd slash_flutter && flutter clean && flutter pub get && flutter build web
 
-# once heare the app will be compiled and ready to deploy
-
-# use nginx to deploy
-FROM nginx:1.25.2-alpine
-
+FROM caddy:2.7.4-alpine
 # copy the info of the builded web app to nginx
-COPY --from=build-env /app/slash_flutter/build/web /usr/share/nginx/html
+COPY --from=build-env /app /
 
-# Expose and run nginx
-EXPOSE 80
-CMD ["nginx", "-g", "daemon off;"]
+COPY slash_proxy/Caddyfile /etc/caddy/Caddyfile
+
+RUN caddy fmt --overwrite /etc/caddy/Caddyfile
+
+CMD caddy run --config /etc/caddy/Caddyfile --adapter caddyfile 2>&1

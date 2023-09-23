@@ -46,7 +46,7 @@
 
 
 slashdesign.nl {
-    	root * ../slash_flutter/build/web
+    	root * /slash_flutter/build/web
     	encode gzip
     	file_server
 }
