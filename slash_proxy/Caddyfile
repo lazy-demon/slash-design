@@ -40,13 +40,4 @@
 	}
 
 	reverse_proxy @insights_host http://{$INSIGHTS_HOST_INTERNAL} # proxy the host matched by the named matcher to the host value specified in this environment variable
-	
 }
-
-
-
-# slashdesign.nl {
-#     	root * slash_flutter/build/web
-#     	encode gzip
-#     	file_server
-# }
