@@ -32,7 +32,7 @@
 		host {$WEB_HOST_EXTERNAL} # match to the host value specified in this environment variable
 	}
 
-	reverse_proxy @web_host http://{$WEB_HOST_INTERNAL} { header_up Host {upstream_hostport} }
+	reverse_proxy @web_host http://{$WEB_HOST_INTERNAL} # proxy the host matched by the named matcher to the host value specified in this environment variable
 
 	# named matcher, matches the host specified in environment variable 
 	@insights_host {
