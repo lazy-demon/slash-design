@@ -12,10 +12,9 @@ RUN mkdir $APP
 COPY . $APP
 # stup new folder as the working directory
 
-WORKDIR $APP/slash_proxy
+WORKDIR $APP
 
-
-COPY Caddyfile /etc/caddy/Caddyfile
+COPY slash_proxy/Caddyfile /etc/caddy/Caddyfile
 
 RUN caddy fmt --overwrite /etc/caddy/Caddyfile
 
