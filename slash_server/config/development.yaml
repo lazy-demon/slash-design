@@ -8,34 +8,34 @@
 
 # Configuration for the main API server.
 apiServer:
-  port: 8080
-  publicHost: localhost
-  publicPort: 8080
+  port: 8000
+  publicHost: api.slashdesign.nl
+  publicPort: 8000
   publicScheme: http
 
 # Configuration for the Insights server.
 insightsServer:
-  port: 8081
-  publicHost: localhost
-  publicPort: 8081
+  port: 8001
+  publicHost: insights.slashdesign.nl
+  publicPort: 8001
   publicScheme: http
 
 # Configuration for the web server.
 webServer:
-  port: 8082
-  publicHost: localhost
-  publicPort: 8082
+  port: 8002
+  publicHost: web.slashdesign.nl
+  publicPort: 8002
   publicScheme: http
 
 # This is the database setup for your server.
 database:
-  host: localhost
-  port: 8090
-  name: slash
+  host: containers-us-west-72.railway.app
+  port: 6695
+  name: railway
   user: postgres
 
 # This is the setup for Redis.
 redis:
-  enabled: false
-  host: localhost
-  port: 8091
+  enabled: true
+  host: containers-us-west-32.railway.app
+  port: 7358
