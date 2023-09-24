@@ -34,7 +34,7 @@
 
 	reverse_proxy @web_host http://{$WEB_HOST_INTERNAL} # proxy the host matched by the named matcher to the host value specified in this environment variable
 
-	# named matcher, matches the host specified in environment variable 
+	# named matcher, matches the host specified in environment variable  
 	@insights_host {
 		host {$INSIGHTS_HOST_EXTERNAL} # match to the host value specified in this environment variable
 	}
