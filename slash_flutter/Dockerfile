@@ -33,7 +33,7 @@ RUN cd slash_flutter && flutter clean && flutter pub get && flutter build web
 
 FROM caddy:2.7.4-alpine 
 
-COPY Caddyfile /etc/caddy/Caddyfile
+COPY slash_flutter/Caddyfile /etc/caddy/Caddyfile
 
 RUN caddy fmt --overwrite /etc/caddy/Caddyfile
 
