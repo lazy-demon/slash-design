@@ -1,8 +1,0 @@
-[build]
-builder = "dockerfile"
-dockerfilePath = "./slash_proxy/Dockerfile"
-
-# [deploy]
-# healthcheckPath = "/"
-# healthcheckTimeout = 100
-# restartPolicyType = "never"

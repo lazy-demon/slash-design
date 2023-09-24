@@ -6,7 +6,7 @@ COPY . .
 RUN dart pub get
 RUN dart compile exe bin/main.dart -o bin/main
 
-FROM debian:buster-slim AS runtime 
+FROM busybox
 
 ENV runmode=development
 ENV serverid=default
@@ -19,13 +19,8 @@ COPY --from=build /app/config/ config/
 COPY --from=build /app/generated/ generated/
 COPY --from=build /app/web/ web/
 
-ARG SERVERPOD_PASSWORDS
-RUN echo "$SERVERPOD_PASSWORDS" > config/passwords.yaml
-
 EXPOSE 8080
 EXPOSE 8081
 EXPOSE 8082
-EXPOSE 8000
-EXPOSE 8001
 
 CMD app/bin/main --mode $runmode --server-id $serverid --logging $logging --role $role
