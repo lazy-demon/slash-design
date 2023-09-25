@@ -29,12 +29,18 @@ COPY . $APP
 WORKDIR $APP
 
 # Run build: 1 - clean, 2 - pub get, 3 - build web
-RUN cd slash_flutter && flutter clean && flutter pub get && flutter build web
+RUN cd slash_flutter && flutter clean
+RUN cd slash_flutter && flutter pub get
+RUN cd slash_flutter && flutter build web
 
-FROM caddy:2.7.4-alpine 
+# once heare the app will be compiled and ready to deploy
 
-COPY slash_flutter/Caddyfile /etc/caddy/Caddyfile
+# use nginx to deploy
+FROM nginx:1.25.2-alpine
 
-RUN caddy fmt --overwrite /etc/caddy/Caddyfile
+# copy the info of the builded web app to nginx
+COPY --from=build-env /app/slash_flutter/build/web /usr/share/nginx/html
 
-CMD caddy run --config /etc/caddy/Caddyfile --adapter caddyfile 2>&1
+# Expose and run nginx
+EXPOSE 80
+CMD ["nginx", "-g", "daemon off;"]
