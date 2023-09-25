@@ -1,8 +1,8 @@
 [build]
 builder = "dockerfile"
-dockerfilePath = "/Dockerfile"
+dockerfilePath = "./slash_flutter/Dockerfile"
 
 # [deploy]
 # healthcheckPath = "/"
 # healthcheckTimeout = 100
-# restartPolicyType = "never"
+# restartPolicyType = "never"6
