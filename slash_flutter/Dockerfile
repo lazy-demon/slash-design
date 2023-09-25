@@ -29,13 +29,13 @@ COPY . $APP
 WORKDIR $APP
 
 # Run build: 1 - clean, 2 - pub get, 3 - build web
-RUN cd ${NAME}_flutter && flutter clean && flutter pub get && flutter build web  
+RUN cd $NAME_flutter && flutter clean && flutter pub get && flutter build web  
 
 # use nginx to deploy
 FROM nginx:1.25.2-alpine
 
 # copy the info of the builded web app to nginx
-COPY --from=build-env /app/${NAME}_flutter/build/web /usr/share/nginx/html
+COPY --from=build-env /app/$NAME_flutter/build/web /usr/share/nginx/html
 
 # Expose and run nginx
 EXPOSE 80
