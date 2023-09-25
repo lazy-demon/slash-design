@@ -1,6 +1,6 @@
 [build]
 builder = "dockerfile"
-dockerfilePath = "./slash_flutter/Dockerfile"
+dockerfilePath = "./${PATH}_flutter/Dockerfile"
 
 # [deploy]
 # healthcheckPath = "/"

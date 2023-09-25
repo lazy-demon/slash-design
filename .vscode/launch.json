@@ -30,6 +30,12 @@
             "request": "launch",
             "name": "railway",
             "command": "nvm install 18 && npm install -g @railway/cli",
+        },
+        {
+            "type": "node-terminal",
+            "request": "launch",
+            "name": "git",
+            "command": "git config --global user.name lazy-demon && git config --global user.email jefdayt@gmail.com",
         }
     ],
     "compounds": [
