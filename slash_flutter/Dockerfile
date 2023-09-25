@@ -16,9 +16,9 @@ COPY . $APP
 WORKDIR $APP
 
 ARG NAME
-RUN cd $NAME_flutter && flutter clean && flutter pub get && flutter build web
+RUN cd ${NAME}_flutter && flutter clean && flutter pub get && flutter build web
 
 FROM nginx:1.25.2-alpine-slim
-COPY --from=build-env /app/$NAME_flutter/build/web /usr/share/nginx/html
+COPY --from=build-env /app/${NAME}_flutter/build/web /usr/share/nginx/html
 EXPOSE 80
 CMD ["nginx", "-g", "daemon off;"]
