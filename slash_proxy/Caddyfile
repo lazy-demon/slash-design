@@ -43,8 +43,8 @@
 
 	# named matcher, matches the host specified in environment variable 
 	@slash_host {
-		host slashdesign.nl # match to the host value specified in this environment variable
+		host {$ROOT_HOST_EXTERNAL} # match to the host value specified in this environment variable
 	}
 
-	reverse_proxy @slash_host http://flutter.railway.internal # proxy the host matched by the named matcher to the host value specified in this environment variable 
+	reverse_proxy @slash_host http://{$ROOT_HOST_INTERNAL} # proxy the host matched by the named matcher to the host value specified in this environment variable 
 }
