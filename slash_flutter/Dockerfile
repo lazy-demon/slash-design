@@ -29,11 +29,7 @@ COPY . $APP
 WORKDIR $APP
 
 # Run build: 1 - clean, 2 - pub get, 3 - build web
-RUN flutter clean
-RUN flutter pub get
-RUN flutter build web
-
-# once heare the app will be compiled and ready to deploy
+RUN cd slash_flutter && flutter clean && flutter pub get && flutter build web  
 
 # use nginx to deploy
 FROM nginx:1.25.2-alpine
