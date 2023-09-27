@@ -16,7 +16,7 @@ COPY . $APP
 WORKDIR $APP
 
 ARG NAME
-RUN cd ${NAME}_flutter && flutter clean && flutter pub get && flutter build web
+RUN cd "$NAME"_flutter && flutter clean && flutter pub get && flutter build web
 
 FROM nginx:1.25.2-alpine-slim
 ARG NAME
