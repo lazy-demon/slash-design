@@ -15,7 +15,7 @@ RUN mkdir $APP
 COPY . $APP
 WORKDIR $APP
 
-RUN cd slash_flutter && flutter clean && flutter pub get && flutter build web
+RUN ls && cd slash_flutter && flutter clean && flutter pub get && flutter build web
 
 FROM nginx:1.25.2-alpine-slim
 COPY --from=build-env /app/slash_flutter/build/web /usr/share/nginx/html
