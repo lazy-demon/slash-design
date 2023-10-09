@@ -83,8 +83,5 @@ Don't forget to give the project a star! Thanks again!
 
 | Name            | Email                             |
 |-----------------|-----------------------------------|
-| Jeffrey Boone   | <s1135370@student.hsleiden.nl>      |
-| Isabel Bohre    | <s1139609@student.hsleiden.nl>      |
-| Bas Valk        | <s1150223@student.hsleiden.nl>      |
-| Luuk Schoon     | <s1129817@student.hsleiden.nl>      |
-| Mike Asante     | <s1127461@student.hsleiden.nl>      |
+| Jeffrey Boone   | <jefdayt@gmail.com>      |
+| Alysia G.    | bleh      |
