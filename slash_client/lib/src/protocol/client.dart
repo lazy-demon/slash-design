@@ -9,8 +9,10 @@
 import 'package:serverpod_client/serverpod_client.dart' as _i1;
 import 'dart:async' as _i2;
 import 'package:slash_client/src/protocol/channel.dart' as _i3;
-import 'dart:io' as _i4;
-import 'protocol.dart' as _i5;
+import 'package:serverpod_auth_client/module.dart' as _i4;
+import 'package:serverpod_chat_client/module.dart' as _i5;
+import 'dart:io' as _i6;
+import 'protocol.dart' as _i7;
 
 class _EndpointChannels extends _i1.EndpointRef {
   _EndpointChannels(_i1.EndpointCaller caller) : super(caller);
@@ -26,25 +28,42 @@ class _EndpointChannels extends _i1.EndpointRef {
       );
 }
 
+class _Modules {
+  _Modules(Client client) {
+    auth = _i4.Caller(client);
+    chat = _i5.Caller(client);
+  }
+
+  late final _i4.Caller auth;
+
+  late final _i5.Caller chat;
+}
+
 class Client extends _i1.ServerpodClient {
   Client(
     String host, {
-    _i4.SecurityContext? context,
+    _i6.SecurityContext? context,
     _i1.AuthenticationKeyManager? authenticationKeyManager,
   }) : super(
           host,
-          _i5.Protocol(),
+          _i7.Protocol(),
           context: context,
           authenticationKeyManager: authenticationKeyManager,
         ) {
     channels = _EndpointChannels(this);
+    modules = _Modules(this);
   }
 
   late final _EndpointChannels channels;
+
+  late final _Modules modules;
 
   @override
   Map<String, _i1.EndpointRef> get endpointRefLookup => {'channels': channels};
 
   @override
-  Map<String, _i1.ModuleEndpointCaller> get moduleLookup => {};
+  Map<String, _i1.ModuleEndpointCaller> get moduleLookup => {
+        'auth': modules.auth,
+        'chat': modules.chat,
+      };
 }
