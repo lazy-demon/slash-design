@@ -1,8 +1,8 @@
-import 'package:chat_client/chat_client.dart';
-import 'package:chat_flutter/main.dart';
-import 'package:chat_flutter/src/chat_page.dart';
+import 'package:slash_client/slash_client.dart';
+import 'package:slash_flutter/main.dart';
 import 'package:flutter/material.dart';
 import 'package:serverpod_chat_flutter/serverpod_chat_flutter.dart';
+import 'package:slash_flutter/src/page/chat_page.dart';
 
 /// The MainPage contains a _ChatPage with the currently selected chat, and a
 /// drawer where the user can pick which chat to interact with.
