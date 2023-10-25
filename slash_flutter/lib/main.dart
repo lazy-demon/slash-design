@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:serverpod_auth_email_flutter/serverpod_auth_email_flutter.dart';
 import 'package:serverpod_auth_shared_flutter/serverpod_auth_shared_flutter.dart';
+import 'package:serverpod_chat_flutter/serverpod_chat_flutter.dart';
 import 'package:slash_client/slash_client.dart';
 import 'package:serverpod_flutter/serverpod_flutter.dart';
 import 'src/page/disconnected_page.dart';
