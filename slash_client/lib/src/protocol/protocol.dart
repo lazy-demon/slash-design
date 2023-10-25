@@ -8,8 +8,8 @@
 library protocol; // ignore_for_file: no_leading_underscores_for_library_prefixes
 
 import 'package:serverpod_client/serverpod_client.dart' as _i1;
-import 'example.dart' as _i2;
-export 'example.dart';
+import 'channel.dart' as _i2;
+export 'channel.dart';
 export 'client.dart';
 
 class Protocol extends _i1.SerializationManager {
@@ -30,27 +30,27 @@ class Protocol extends _i1.SerializationManager {
     if (customConstructors.containsKey(t)) {
       return customConstructors[t]!(data, this) as T;
     }
-    if (t == _i2.Example) {
-      return _i2.Example.fromJson(data, this) as T;
+    if (t == _i2.Channel) {
+      return _i2.Channel.fromJson(data, this) as T;
     }
-    if (t == _i1.getType<_i2.Example?>()) {
-      return (data != null ? _i2.Example.fromJson(data, this) : null) as T;
+    if (t == _i1.getType<_i2.Channel?>()) {
+      return (data != null ? _i2.Channel.fromJson(data, this) : null) as T;
     }
     return super.deserialize<T>(data, t);
   }
 
   @override
   String? getClassNameForObject(Object data) {
-    if (data is _i2.Example) {
-      return 'Example';
+    if (data is _i2.Channel) {
+      return 'Channel';
     }
     return super.getClassNameForObject(data);
   }
 
   @override
   dynamic deserializeByClassName(Map<String, dynamic> data) {
-    if (data['className'] == 'Example') {
-      return deserialize<_i2.Example>(data['data']);
+    if (data['className'] == 'Channel') {
+      return deserialize<_i2.Channel>(data['data']);
     }
     return super.deserializeByClassName(data);
   }
