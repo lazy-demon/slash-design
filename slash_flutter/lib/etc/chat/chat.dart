@@ -18,7 +18,7 @@ import 'package:open_filex/open_filex.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:uuid/uuid.dart';
 
-import '../../../scaffolding.dart';
+import '../../scaffolding.dart';
 
 @RoutePage()
 class ChatPage extends ConsumerWidget {
