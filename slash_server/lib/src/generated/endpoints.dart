@@ -7,10 +7,34 @@
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'package:serverpod/serverpod.dart' as _i1;
+import '../endpoints/channels.dart' as _i2;
 
 class Endpoints extends _i1.EndpointDispatch {
   @override
   void initializeEndpoints(_i1.Server server) {
-    var endpoints = <String, _i1.Endpoint>{};
+    var endpoints = <String, _i1.Endpoint>{
+      'channels': _i2.ChannelsEndpoint()
+        ..initialize(
+          server,
+          'channels',
+          null,
+        )
+    };
+    connectors['channels'] = _i1.EndpointConnector(
+      name: 'channels',
+      endpoint: endpoints['channels']!,
+      methodConnectors: {
+        'getChannels': _i1.MethodConnector(
+          name: 'getChannels',
+          params: {},
+          call: (
+            _i1.Session session,
+            Map<String, dynamic> params,
+          ) async =>
+              (endpoints['channels'] as _i2.ChannelsEndpoint)
+                  .getChannels(session),
+        )
+      },
+    );
   }
 }

@@ -7,23 +7,43 @@
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'package:serverpod_client/serverpod_client.dart' as _i1;
-import 'dart:io' as _i2;
-import 'protocol.dart' as _i3;
+import 'dart:async' as _i2;
+import 'package:slash_client/src/protocol/channel.dart' as _i3;
+import 'dart:io' as _i4;
+import 'protocol.dart' as _i5;
+
+class _EndpointChannels extends _i1.EndpointRef {
+  _EndpointChannels(_i1.EndpointCaller caller) : super(caller);
+
+  @override
+  String get name => 'channels';
+
+  _i2.Future<List<_i3.Channel>> getChannels() =>
+      caller.callServerEndpoint<List<_i3.Channel>>(
+        'channels',
+        'getChannels',
+        {},
+      );
+}
 
 class Client extends _i1.ServerpodClient {
   Client(
     String host, {
-    _i2.SecurityContext? context,
+    _i4.SecurityContext? context,
     _i1.AuthenticationKeyManager? authenticationKeyManager,
   }) : super(
           host,
-          _i3.Protocol(),
+          _i5.Protocol(),
           context: context,
           authenticationKeyManager: authenticationKeyManager,
-        ) {}
+        ) {
+    channels = _EndpointChannels(this);
+  }
+
+  late final _EndpointChannels channels;
 
   @override
-  Map<String, _i1.EndpointRef> get endpointRefLookup => {};
+  Map<String, _i1.EndpointRef> get endpointRefLookup => {'channels': channels};
 
   @override
   Map<String, _i1.ModuleEndpointCaller> get moduleLookup => {};

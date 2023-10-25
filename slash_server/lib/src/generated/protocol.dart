@@ -10,6 +10,7 @@ library protocol; // ignore_for_file: no_leading_underscores_for_library_prefixe
 import 'package:serverpod/serverpod.dart' as _i1;
 import 'package:serverpod/protocol.dart' as _i2;
 import 'channel.dart' as _i3;
+import 'package:slash_server/src/generated/channel.dart' as _i4;
 export 'channel.dart';
 
 class Protocol extends _i1.SerializationManagerServer {
@@ -81,6 +82,10 @@ class Protocol extends _i1.SerializationManagerServer {
     }
     if (t == _i1.getType<_i3.Channel?>()) {
       return (data != null ? _i3.Channel.fromJson(data, this) : null) as T;
+    }
+    if (t == List<_i4.Channel>) {
+      return (data as List).map((e) => deserialize<_i4.Channel>(e)).toList()
+          as dynamic;
     }
     try {
       return _i2.Protocol().deserialize<T>(data, t);
