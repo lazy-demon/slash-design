@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 // import 'package:flutter_riverpod/flutter_riverpod.dart';
 // import 'package:slash_design/object/state/auth.dart';
 
-import '../../scaffolding.dart';
+import '../scaffolding.dart';
 
 // @RoutePage()
 class HomePage extends StatelessWidget {
