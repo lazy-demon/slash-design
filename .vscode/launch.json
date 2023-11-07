@@ -1,0 +1,62 @@
+// run the commands: 
+// cd slash/slash_server
+// docker-compose up --build --detach
+// dart bin/main.dart
+// cd slash/slash_flutter
+// flutter run -d chrome
+// write the launch .json ising the text above 
+// to run the debugger, click the debug button on the left side of the screen
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "server",
+            "request": "launch",
+            "type": "dart",
+            "cwd": "${workspaceFolder}/slash_server",
+            "program": "bin/main.dart",
+            "deviceId": "web-server",
+            "preLaunchTask": "compose"
+        },
+        {
+            "name": "client",
+            "request": "launch",
+            "type": "dart",
+            "cwd": "${workspaceFolder}/slash_flutter",
+            "program": "lib/main.dart",
+            "args": [
+                "-d",
+                "web-server"
+            ],
+        },
+        {
+            "type": "node-terminal",
+            "request": "launch",
+            "name": "railway",
+            "command": "nvm install 18 && npm install -g @railway/cli",
+        },
+        {
+            "type": "node-terminal",
+            "request": "launch",
+            "name": "git",
+            "command": "git config --global user.name lazy-demon && git config --global user.email jefdayt@gmail.com",
+        },
+        {
+            "type": "node-terminal",
+            "request": "launch",
+            "name": ".gitignore",
+            "command": "git rm -rf --cached . && git add .",
+        }
+    ],
+    "compounds": [
+        {
+            "name": "serverpod",
+            "configurations": [
+                "server",
+                "client"
+            ],
+            "preLaunchTask": "compose",
+        }
+    ],
+}
+// && && nvm use 18 && npm install -g @railway/cli

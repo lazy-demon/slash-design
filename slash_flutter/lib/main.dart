@@ -4,9 +4,9 @@ import 'package:serverpod_auth_shared_flutter/serverpod_auth_shared_flutter.dart
 import 'package:serverpod_chat_flutter/serverpod_chat_flutter.dart';
 import 'package:slash_client/slash_client.dart';
 import 'package:serverpod_flutter/serverpod_flutter.dart';
-import 'src/page/disconnected_page.dart';
-import 'src/page/loading_page.dart';
-import 'src/page/main_page.dart';
+import 'page/disconnected_page.dart';
+import 'page/loading_page.dart';
+import 'page/main_page.dart';
 
 late SessionManager sessionManager;
 late Client client;
@@ -23,6 +23,7 @@ void main() async {
   // production servers.
   client = Client(
     'http://localhost:8080/',
+    // 'slash-design.railway.internal:',
     authenticationKeyManager: FlutterAuthenticationKeyManager(),
   )..connectivityMonitor = FlutterConnectivityMonitor();
 
