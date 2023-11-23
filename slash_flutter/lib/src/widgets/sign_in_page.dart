@@ -8,7 +8,8 @@ import 'package:serverpod_auth_google_flutter/serverpod_auth_google_flutter.dart
 // to obtain the Client IDs. These can also be specified by adding a plist file
 // to your Xcode project.
 // const _googleClientId = '<Your iOS Client ID from the Google Cloud console>';
-const _googleServerClientId = '6LdsfRopAAAAAPBlJwx9-bMs-o56sJVFRHIKXfL2';
+const _googleServerClientId =
+    '73125679679-7mkqfemqhoo4uv2co10ucl89mnpqehls.apps.googleusercontent.com';
 
 /// Sign in dialog with the option of signing in with email or Google.
 class SignInPage extends StatelessWidget {
