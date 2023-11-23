@@ -13,7 +13,7 @@ ENV serverid=default
 ENV logging=normal
 ENV role=monolith
 
-ENV $SERVERPOD_PASSWORDS
+# ENV SERVERPOD_PASSWORDS=$SERVERPOD_PASSWORDS
 RUN echo "$SERVERPOD_PASSWORDS" > config/passwords.yaml
 
 COPY --from=build /runtime/ /
