@@ -10,10 +10,10 @@ library protocol; // ignore_for_file: no_leading_underscores_for_library_prefixe
 import 'package:serverpod/serverpod.dart' as _i1;
 import 'package:serverpod/protocol.dart' as _i2;
 import 'package:serverpod_auth_server/module.dart' as _i3;
-import 'package:serverpod_chat_server/module.dart' as _i4;
-import 'channel.dart' as _i5;
-import 'package:slash_server/src/generated/channel.dart' as _i6;
+import 'channel.dart' as _i4;
+import 'example.dart' as _i5;
 export 'channel.dart';
+export 'example.dart';
 
 class Protocol extends _i1.SerializationManagerServer {
   Protocol._();
@@ -68,7 +68,6 @@ class Protocol extends _i1.SerializationManagerServer {
       managed: true,
     ),
     ..._i3.Protocol.targetDatabaseDefinition.tables,
-    ..._i4.Protocol.targetDatabaseDefinition.tables,
     ..._i2.Protocol.targetDatabaseDefinition.tables,
   ]);
 
@@ -81,21 +80,20 @@ class Protocol extends _i1.SerializationManagerServer {
     if (customConstructors.containsKey(t)) {
       return customConstructors[t]!(data, this) as T;
     }
-    if (t == _i5.Channel) {
-      return _i5.Channel.fromJson(data, this) as T;
+    if (t == _i4.Channel) {
+      return _i4.Channel.fromJson(data, this) as T;
     }
-    if (t == _i1.getType<_i5.Channel?>()) {
-      return (data != null ? _i5.Channel.fromJson(data, this) : null) as T;
+    if (t == _i5.Example) {
+      return _i5.Example.fromJson(data, this) as T;
     }
-    if (t == List<_i6.Channel>) {
-      return (data as List).map((e) => deserialize<_i6.Channel>(e)).toList()
-          as dynamic;
+    if (t == _i1.getType<_i4.Channel?>()) {
+      return (data != null ? _i4.Channel.fromJson(data, this) : null) as T;
+    }
+    if (t == _i1.getType<_i5.Example?>()) {
+      return (data != null ? _i5.Example.fromJson(data, this) : null) as T;
     }
     try {
       return _i3.Protocol().deserialize<T>(data, t);
-    } catch (_) {}
-    try {
-      return _i4.Protocol().deserialize<T>(data, t);
     } catch (_) {}
     try {
       return _i2.Protocol().deserialize<T>(data, t);
@@ -110,12 +108,11 @@ class Protocol extends _i1.SerializationManagerServer {
     if (className != null) {
       return 'serverpod_auth.$className';
     }
-    className = _i4.Protocol().getClassNameForObject(data);
-    if (className != null) {
-      return 'serverpod_chat.$className';
-    }
-    if (data is _i5.Channel) {
+    if (data is _i4.Channel) {
       return 'Channel';
+    }
+    if (data is _i5.Example) {
+      return 'Example';
     }
     return super.getClassNameForObject(data);
   }
@@ -126,12 +123,11 @@ class Protocol extends _i1.SerializationManagerServer {
       data['className'] = data['className'].substring(15);
       return _i3.Protocol().deserializeByClassName(data);
     }
-    if (data['className'].startsWith('serverpod_chat.')) {
-      data['className'] = data['className'].substring(15);
-      return _i4.Protocol().deserializeByClassName(data);
-    }
     if (data['className'] == 'Channel') {
-      return deserialize<_i5.Channel>(data['data']);
+      return deserialize<_i4.Channel>(data['data']);
+    }
+    if (data['className'] == 'Example') {
+      return deserialize<_i5.Example>(data['data']);
     }
     return super.deserializeByClassName(data);
   }
@@ -145,20 +141,14 @@ class Protocol extends _i1.SerializationManagerServer {
       }
     }
     {
-      var table = _i4.Protocol().getTableForType(t);
-      if (table != null) {
-        return table;
-      }
-    }
-    {
       var table = _i2.Protocol().getTableForType(t);
       if (table != null) {
         return table;
       }
     }
     switch (t) {
-      case _i5.Channel:
-        return _i5.Channel.t;
+      case _i4.Channel:
+        return _i4.Channel.t;
     }
     return null;
   }

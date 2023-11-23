@@ -7,38 +7,44 @@
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'package:serverpod/serverpod.dart' as _i1;
-import '../endpoints/channels.dart' as _i2;
+import '../endpoints/example_endpoint.dart' as _i2;
 import 'package:serverpod_auth_server/module.dart' as _i3;
-import 'package:serverpod_chat_server/module.dart' as _i4;
 
 class Endpoints extends _i1.EndpointDispatch {
   @override
   void initializeEndpoints(_i1.Server server) {
     var endpoints = <String, _i1.Endpoint>{
-      'channels': _i2.ChannelsEndpoint()
+      'example': _i2.ExampleEndpoint()
         ..initialize(
           server,
-          'channels',
+          'example',
           null,
         )
     };
-    connectors['channels'] = _i1.EndpointConnector(
-      name: 'channels',
-      endpoint: endpoints['channels']!,
+    connectors['example'] = _i1.EndpointConnector(
+      name: 'example',
+      endpoint: endpoints['example']!,
       methodConnectors: {
-        'getChannels': _i1.MethodConnector(
-          name: 'getChannels',
-          params: {},
+        'hello': _i1.MethodConnector(
+          name: 'hello',
+          params: {
+            'name': _i1.ParameterDescription(
+              name: 'name',
+              type: _i1.getType<String>(),
+              nullable: false,
+            )
+          },
           call: (
             _i1.Session session,
             Map<String, dynamic> params,
           ) async =>
-              (endpoints['channels'] as _i2.ChannelsEndpoint)
-                  .getChannels(session),
+              (endpoints['example'] as _i2.ExampleEndpoint).hello(
+            session,
+            params['name'],
+          ),
         )
       },
     );
     modules['serverpod_auth'] = _i3.Endpoints()..initializeEndpoints(server);
-    modules['serverpod_chat'] = _i4.Endpoints()..initializeEndpoints(server);
   }
 }

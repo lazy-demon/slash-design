@@ -1,41 +1,49 @@
-# This is the configuration file for your local development environment. By
-# default, it runs a single server on port 8080. To set up your server, you will
-# need to add the name of the database you are connecting to and the user name.
-# The password for the database is stored in the config/passwords.yaml.
+# This is the configuration file for your staging environment. The staging
+# environment is meant to resemble the production environment as much as
+# possible and may connect to production databases services and data. You use it
+# for final testing before deploying the production server.
 #
-# When running your server locally, the server ports are the same as the public
-# facing ports.
+# Typically, you will want to route the traffic through a load balancer
+# which adds SSL security through https. If you use Serverpod's standard
+# Terraform scripts to deploy your server, all you need to change in
+# this file is the examplepod.com domain name.
 
 # Configuration for the main API server.
 apiServer:
-  port: 8000
-  publicHost: api.slashdesign.nl
-  publicPort: 8000
-  publicScheme: http
+  port: 8080
+  publicHost: api-staging.examplepod.com
+  publicPort: 443
+  publicScheme: https
 
 # Configuration for the Insights server.
 insightsServer:
-  port: 8001
-  publicHost: insights.slashdesign.nl
-  publicPort: 8001
-  publicScheme: http
+  port: 8081
+  publicHost: insights-staging.examplepod.com
+  publicPort: 443
+  publicScheme: https
 
 # Configuration for the web server.
 webServer:
-  port: 8002
-  publicHost: web.slashdesign.nl
-  publicPort: 8002
-  publicScheme: http
+  port: 8082
+  publicHost: app-staging.examplepod.com
+  publicPort: 443
+  publicScheme: https
 
-# This is the database setup for your server.
+# This is the database setup for your servers. The default for the Google Cloud
+# Engine Terraform configuration is to connect on a private IP address.
+# If you are connecting on a public IP (e.g. on AWS or Google Cloud Run), you
+# connect on the public IP of the database e.g. database-staging.examplepod.com.
 database:
-  host: containers-us-west-72.railway.app
-  port: 6695
-  name: railway
+  host: database.private-staging.examplepod.com
+  port: 5432
+  name: serverpod
   user: postgres
 
-# This is the setup for Redis.
+# This is the setup for Redis. The default for the Google Cloud Engine Terraform
+# configuration is to connect on a private IP address.
+# If you are connecting on a public IP (e.g. on AWS or Google Cloud Run), you
+# connect on the public IP of the database e.g. redis-staging.examplepod.com.
 redis:
-  enabled: true
-  host: containers-us-west-32.railway.app
-  port: 7358
+  enabled: false
+  host: redis.private-staging.examplepod.com
+  port: 6379
