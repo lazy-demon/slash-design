@@ -12,7 +12,7 @@ Future<void> initializeServerpodClient() async {
   // the default port. You will need to modify this to connect to staging or
   // production servers.
   client = Client(
-    'http://localhost:8080/',
+    'http://slashdesign.nl/',
     authenticationKeyManager: FlutterAuthenticationKeyManager(),
   )..connectivityMonitor = FlutterConnectivityMonitor();
 
