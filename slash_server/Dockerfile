@@ -21,6 +21,8 @@ COPY --from=build /app/web/ web/
 
 ARG SERVERPOD_PASSWORDS
 RUN echo "$SERVERPOD_PASSWORDS" > config/passwords.yaml
+ARG DEV_ENV_VAR
+RUN echo "$DEV_ENV_VAR" > config/development.yaml
 
 EXPOSE 8080
 EXPOSE 8081
