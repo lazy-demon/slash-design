@@ -27,18 +27,21 @@ dependencies:
   serverpod_flutter: ^1.1.1
   slash_client:
     path: ../slash_client
+  serverpod_auth_email_flutter: 
   serverpod_auth_shared_flutter: 
-
+  serverpod_chat_flutter:
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.5 
   serverpod_auth_google_flutter: ^1.1.1
+  auto_route:
 
 dev_dependencies:
   flutter_lints: ^2.0.1
   flutter_test:
     sdk: flutter
-
+  auto_route_generator:                  
+  build_runner:                    
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
 

@@ -16,7 +16,7 @@
             "cwd": "${workspaceFolder}/slash_server",
             "program": "bin/main.dart",
             "deviceId": "web-server",
-            "preLaunchTask": "compose"
+            // "preLaunchTask": "compose"
         },
         {
             "name": "client",
@@ -26,7 +26,7 @@
             "program": "lib/main.dart",
             "args": [
                 "-d",
-                "web-server"
+                "chrome"
             ],
         },
         {
@@ -55,8 +55,7 @@
                 "server",
                 "client"
             ],
-            "preLaunchTask": "compose",
-        }
+         }
     ],
 }
 // && && nvm use 18 && npm install -g @railway/cli

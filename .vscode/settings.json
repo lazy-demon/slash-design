@@ -1,14 +1,24 @@
 {
-    "sqltools.connections": [
-        {
-            "previewLimit": 50,
-            "server": "localhost",
-            "port": 8090,
-            "askForPassword": true,
-            "driver": "PostgreSQL",
-            "database": "slash",
-            "username": "postgres",
-            "name": "localhost"
-        }
-    ]
+  "sqltools.connections": [
+    {
+      "previewLimit": 50,
+      "server": "localhost",
+      "port": 8090,
+      "driver": "PostgreSQL",
+      "name": "slash-data",
+      "database": "slash",
+      "username": "postgres",
+      "password": "HtNC_zYQexHXXHxjp9rDsSm6RoG1IFVa"
+    },
+    {
+      "previewLimit": 50,
+      "server": "roundhouse.proxy.rlwy.net",
+      "driver": "PostgreSQL",
+      "name": "railway",
+      "database": "postgres",
+      "username": "postgres",
+      "password": "Gab3FDE4C*BeGAG4d-FGb5GbcB523C24",
+      "connectString": "postgresql://postgres:4c4GeaEFe-1-ee5GfC-2*fEg1AFEF4dA@roundhouse.proxy.rlwy.net:15327/railway"
+    }
+  ]
 }

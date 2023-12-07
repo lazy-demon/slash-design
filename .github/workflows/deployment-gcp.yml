@@ -14,6 +14,9 @@ on:
           - 'production'
 
 env:
+  # TODO: Update with your Google Cloud project id. If you have changed the
+  # region and zone in your Terraform configuration, you will need to change
+  # it here too.
   PROJECT: "<PROJECT ID>"
   REGION: us-central1
   ZONE: us-central1-c

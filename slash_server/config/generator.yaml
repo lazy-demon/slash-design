@@ -4,4 +4,6 @@ client_package_path: ../slash_client
 
 modules:
   serverpod_auth:
-    nickname: auth
+    nickname: auth 
+  serverpod_chat:
+    nickname: chat

@@ -1,6 +1,6 @@
-import 'package:slash_flutter/src/serverpod_client.dart';
 import 'package:flutter/material.dart';
 import 'package:serverpod_auth_shared_flutter/serverpod_auth_shared_flutter.dart';
+import 'package:slash_flutter/src/service/serverpod_client.dart';
 
 /// A sample page showing information about the signed in user.
 class AccountPage extends StatelessWidget {

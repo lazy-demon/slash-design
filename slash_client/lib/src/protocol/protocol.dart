@@ -9,10 +9,10 @@ library protocol; // ignore_for_file: no_leading_underscores_for_library_prefixe
 
 import 'package:serverpod_client/serverpod_client.dart' as _i1;
 import 'channel.dart' as _i2;
-import 'example.dart' as _i3;
+import 'package:slash_client/src/protocol/channel.dart' as _i3;
 import 'package:serverpod_auth_client/module.dart' as _i4;
+import 'package:serverpod_chat_client/module.dart' as _i5;
 export 'channel.dart';
-export 'example.dart';
 export 'client.dart';
 
 class Protocol extends _i1.SerializationManager {
@@ -36,17 +36,18 @@ class Protocol extends _i1.SerializationManager {
     if (t == _i2.Channel) {
       return _i2.Channel.fromJson(data, this) as T;
     }
-    if (t == _i3.Example) {
-      return _i3.Example.fromJson(data, this) as T;
-    }
     if (t == _i1.getType<_i2.Channel?>()) {
       return (data != null ? _i2.Channel.fromJson(data, this) : null) as T;
     }
-    if (t == _i1.getType<_i3.Example?>()) {
-      return (data != null ? _i3.Example.fromJson(data, this) : null) as T;
+    if (t == List<_i3.Channel>) {
+      return (data as List).map((e) => deserialize<_i3.Channel>(e)).toList()
+          as dynamic;
     }
     try {
       return _i4.Protocol().deserialize<T>(data, t);
+    } catch (_) {}
+    try {
+      return _i5.Protocol().deserialize<T>(data, t);
     } catch (_) {}
     return super.deserialize<T>(data, t);
   }
@@ -58,11 +59,12 @@ class Protocol extends _i1.SerializationManager {
     if (className != null) {
       return 'serverpod_auth.$className';
     }
+    className = _i5.Protocol().getClassNameForObject(data);
+    if (className != null) {
+      return 'serverpod_chat.$className';
+    }
     if (data is _i2.Channel) {
       return 'Channel';
-    }
-    if (data is _i3.Example) {
-      return 'Example';
     }
     return super.getClassNameForObject(data);
   }
@@ -73,11 +75,12 @@ class Protocol extends _i1.SerializationManager {
       data['className'] = data['className'].substring(15);
       return _i4.Protocol().deserializeByClassName(data);
     }
+    if (data['className'].startsWith('serverpod_chat.')) {
+      data['className'] = data['className'].substring(15);
+      return _i5.Protocol().deserializeByClassName(data);
+    }
     if (data['className'] == 'Channel') {
       return deserialize<_i2.Channel>(data['data']);
-    }
-    if (data['className'] == 'Example') {
-      return deserialize<_i3.Example>(data['data']);
     }
     return super.deserializeByClassName(data);
   }
