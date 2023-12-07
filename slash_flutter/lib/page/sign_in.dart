@@ -42,7 +42,8 @@ class SignInPage extends StatelessWidget {
 
                 serverClientId: _googleServerClientId,
 
-                redirectUri: Uri.parse('http://localhost:8082/googlesignin'),
+                redirectUri:
+                    Uri.parse('http://web.slashdesign.nl/googlesignin'),
               ),
 
               // SignInWithAppleButton(
