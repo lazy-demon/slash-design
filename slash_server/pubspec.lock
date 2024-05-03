@@ -161,6 +161,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "0.2.0"
+  fixnum:
+    dependency: transitive
+    description:
+      name: fixnum
+      sha256: "25517a4deb0c03aa0f32fd12db525856438902d9c16536311e76cdc57b31d7d1"
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.1.0"
   gcloud:
     dependency: transitive
     description:
@@ -173,10 +181,10 @@ packages:
     dependency: transitive
     description:
       name: googleapis
-      sha256: dfea9984f0785ed445ba78e2aa8c55dadd86d6a60ea9e0ffbadad51edb5e7e36
+      sha256: c2f311bcd1b3e4052234162edc6b626a9013a7e1385d6aad37e9e6a6c5f89908
       url: "https://pub.dev"
     source: hosted
-    version: "9.2.0"
+    version: "11.4.0"
   googleapis_auth:
     dependency: transitive
     description:
@@ -317,10 +325,10 @@ packages:
     dependency: transitive
     description:
       name: pointycastle
-      sha256: "7c1e5f0d23c9016c5bbd8b1473d0d3fb3fc851b876046039509e18e0c7485f2c"
+      sha256: "43ac87de6e10afabc85c445745a7b799e04de84cebaa4fd7bf55a5e1e9604d29"
       url: "https://pub.dev"
     source: hosted
-    version: "3.7.3"
+    version: "3.7.4"
   pool:
     dependency: transitive
     description:
@@ -333,10 +341,10 @@ packages:
     dependency: transitive
     description:
       name: postgres
-      sha256: fce8406bbe8b7018c768e76816be24adf302f44c06d7176c912d2501ea6aac2a
+      sha256: f8e4f14734d096277f77ed5dddefcbc1ce18f8f7db5b7ff4b5dd6df2d9db2730
       url: "https://pub.dev"
     source: hosted
-    version: "2.6.3"
+    version: "2.6.4"
   postgres_pool:
     dependency: transitive
     description:
@@ -357,10 +365,10 @@ packages:
     dependency: transitive
     description:
       name: redis
-      sha256: "32e28eb1ba2e0fe2af50bbd06e675e4dfdce4f0ba95c5bc885c72383a1b0b47e"
+      sha256: "4a8218ef7b0642ff499147c7a105591208259e2f55f07db0101ace7f82f66cf9"
       url: "https://pub.dev"
     source: hosted
-    version: "3.1.0"
+    version: "4.0.0"
   retry:
     dependency: transitive
     description:
@@ -397,18 +405,18 @@ packages:
     dependency: "direct main"
     description:
       name: serverpod
-      sha256: "0e187a03a7f97205fb415523ae18b96b683dafe52345d8c2248f2dc343a7040a"
+      sha256: fd1a4c6b124304490058feaadac24380f4dc379f7dfed801c704163120c9119c
       url: "https://pub.dev"
     source: hosted
-    version: "1.1.1"
+    version: "1.2.6"
   serverpod_auth_server:
     dependency: "direct main"
     description:
       name: serverpod_auth_server
-      sha256: a95c4e8b88935c4f7b85688963b1f944794693e1e751c86dccf0fc7604a230a5
+      sha256: "4ad67ca1c52572c39fd7d29d6b3453753374a2d99994b52cadba649d8b600d77"
       url: "https://pub.dev"
     source: hosted
-    version: "1.1.1"
+    version: "1.2.6"
   serverpod_chat_server:
     dependency: "direct main"
     description:
@@ -421,34 +429,34 @@ packages:
     dependency: transitive
     description:
       name: serverpod_client
-      sha256: "27bf49f7f24c029270623030cd9f120f3be99c36c56cb5dac976e5aa78509f28"
+      sha256: "7f31fce9e3bdd23d37dd7bbc1a078bd7d104406e868265bd41ce406940de7130"
       url: "https://pub.dev"
     source: hosted
-    version: "1.1.1"
+    version: "1.2.6"
   serverpod_serialization:
     dependency: transitive
     description:
       name: serverpod_serialization
-      sha256: f4ccf17387f6a5a251a0234acca77ce1cb22212987987637668876c394929cb7
+      sha256: a6e9fd350daf65df50d8e6b07ab1b37ed2a6c8c660f478499d43483694d5729f
       url: "https://pub.dev"
     source: hosted
-    version: "1.1.1"
+    version: "1.2.6"
   serverpod_service_client:
     dependency: transitive
     description:
       name: serverpod_service_client
-      sha256: ac4e195d651c2f4d88656eadcc30ebabae28b2f79320a38788d2a41a0f77d5fb
+      sha256: "3f94491a0b91fbd3ab306473a94e3233076ec293f237e0befdc2b1ac3b857eba"
       url: "https://pub.dev"
     source: hosted
-    version: "1.1.1"
+    version: "1.2.6"
   serverpod_shared:
     dependency: transitive
     description:
       name: serverpod_shared
-      sha256: f48291bb41fe0cb397374c73bfd463ed44396502af31e3b3df50b1686170fcc4
+      sha256: b1bb737dc5b34940837fce519028a592f9c00c5ff8ee921d7478ac227d2703ff
       url: "https://pub.dev"
     source: hosted
-    version: "1.1.1"
+    version: "1.2.6"
   sortedmap:
     dependency: transitive
     description:
@@ -465,6 +473,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.10.0"
+  sprintf:
+    dependency: transitive
+    description:
+      name: sprintf
+      sha256: "1fc9ffe69d4df602376b52949af107d8f5703b77cda567c4d7d86a0693120f23"
+      url: "https://pub.dev"
+    source: hosted
+    version: "7.0.0"
   stack_trace:
     dependency: transitive
     description:
@@ -549,18 +565,18 @@ packages:
     dependency: transitive
     description:
       name: uuid
-      sha256: "648e103079f7c64a36dc7d39369cabb358d377078a051d6ae2ad3aa539519313"
+      sha256: cd210a09f7c18cbe5a02511718e0334de6559871052c90a90c0cca46a4aa81c8
       url: "https://pub.dev"
     source: hosted
-    version: "3.0.7"
+    version: "4.3.3"
   vm_service:
     dependency: transitive
     description:
       name: vm_service
-      sha256: c538be99af830f478718b51630ec1b6bee5e74e52c8a802d328d9e71d35d2583
+      sha256: a75f83f14ad81d5fe4b3319710b90dec37da0e22612326b696c9e1b8f34bbf48
       url: "https://pub.dev"
     source: hosted
-    version: "11.10.0"
+    version: "14.2.0"
   web_socket_channel:
     dependency: transitive
     description:
